@@ -39,7 +39,7 @@ async function movie(title:string): Promise<MovieBool>{
 }
 
 //funcao que cria a section dos dados obtidos e adiciona a tela
-function createSector(movie:MovieBool):void{
+function createMovieSection(movie:MovieBool):void{
     //se o tupo da viariavel nao for boleana, significa que ele é do tipo movie e possui as propriedades desejadas
     if(typeof movie !== "boolean"){
         
@@ -51,7 +51,25 @@ function createSector(movie:MovieBool):void{
         poster.classList.add("poster") //adiciona a classe poster para usar no css
         poster.src = movie.poster
 
+        //Cria o elemento de titulo do filme 
+        let title = document.createElement("h2")
+        title.classList.add("title")// adiciona a classe title para usar no css
+        title.innerText = movie.title
+
+        //Cria o elemento de plot do filme
+        let plot = document.createElement("p")
+        plot.classList.add("plot")//adiciona a classe plot para usar no css
+        plot.innerText = movie.plot
+
+        //Cria o elemento da nota do imdb do filme 
+        let imdbRating = document.createElement("p")
+        imdbRating.classList.add("imdbRating")//Adiiona a classe imdbRating para usar no css
+        imdbRating.innerText = movie.imdbRating
+
         document.getElementById("teste").appendChild(poster)
+        document.getElementById("teste").appendChild(title)
+        document.getElementById("teste").appendChild(plot)
+        document.getElementById("teste").appendChild(imdbRating)
     }
 }
 
@@ -62,7 +80,7 @@ document.getElementById("botao").addEventListener("click",async (ev)=>{
     const miranha:MovieBool = await movie("Spider Man 3")
     if(miranha){
         console.log(miranha)
-        createSector(miranha)
+        createMovieSection(miranha)
     }else{
         console.log('Filme nao encontrado')
     }   
