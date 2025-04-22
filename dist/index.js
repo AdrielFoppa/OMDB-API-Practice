@@ -27,12 +27,12 @@ async function movie(title) {
         return false;
     }
 }
-//funcao que cria a section dos dados obtidos e adiciona a tela
-function createMovieSection(movie) {
+//funcao que cria a Div dos dados obtidos e adiciona a tela
+function createMovieDiv(movie) {
     //se o tupo da viariavel nao for boleana, significa que ele é do tipo movie e possui as propriedades desejadas
     if (typeof movie !== "boolean") {
-        //cria a section onde sera adicionado os dados do filme
-        let section = document.createElement("section");
+        //cria a Div onde sera adicionado os dados do filme
+        let div = document.createElement("div");
         //cria elemento de imagem do poster 
         let poster = document.createElement("img");
         poster.classList.add("poster"); //adiciona a classe poster para usar no css
@@ -49,10 +49,8 @@ function createMovieSection(movie) {
         let imdbRating = document.createElement("p");
         imdbRating.classList.add("imdbRating"); //Adiiona a classe imdbRating para usar no css
         imdbRating.innerText = movie.imdbRating;
-        document.getElementById("teste").appendChild(poster);
-        document.getElementById("teste").appendChild(title);
-        document.getElementById("teste").appendChild(plot);
-        document.getElementById("teste").appendChild(imdbRating);
+        div.append(title, poster, imdbRating, plot);
+        document.getElementById("data").appendChild(div);
     }
 }
 document.getElementById("botao").addEventListener("click", async (ev) => {
@@ -60,7 +58,7 @@ document.getElementById("botao").addEventListener("click", async (ev) => {
     const miranha = await movie("Spider Man 3");
     if (miranha) {
         console.log(miranha);
-        createMovieSection(miranha);
+        createMovieDiv(miranha);
     }
     else {
         console.log('Filme nao encontrado');
