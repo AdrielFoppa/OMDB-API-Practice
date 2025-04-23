@@ -187,6 +187,26 @@ body {
 }
 
 
+/*mensagem de erro*/
+.error {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
 
 .divMovie{
   color: white;

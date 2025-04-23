@@ -72,6 +72,18 @@ function restartSection() {
     //limpa o html da section para que tire o filme da tela
     section.innerHTML = ``;
 }
+//funcao que mostra que nao existe o filme na api
+function noMovie() {
+    //pega o elemento que contem a mensagem que o filme nao existe
+    const errorDiv = document.getElementById("errorMessage");
+    errorDiv.innerText = "No movies found!";
+    //remove a classe hidden que deixa o elemento com a opacidade 0 (invisivel)
+    errorDiv.classList.remove("hidden");
+    //depois de 3 segundos adiciona a classe hidden novamente deixando o componente invisivel
+    setTimeout(() => {
+        errorDiv.classList.add("hidden");
+    }, 3000);
+}
 //Funcao que sera chamado ao clicar no botao 
 document.getElementById("botao").addEventListener("click", async (ev) => {
     ev.preventDefault();
@@ -90,6 +102,6 @@ document.getElementById("botao").addEventListener("click", async (ev) => {
         createMovieDiv(movieData);
     }
     else {
-        console.log('Filme nao encontrado');
+        noMovie();
     }
 });
