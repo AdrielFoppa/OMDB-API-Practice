@@ -8,7 +8,7 @@ body {
   }
 
 
-
+/*input*/
 .input__container {
     position: absolute;
     background: rgba(255, 255, 255, 0.664);
@@ -70,7 +70,7 @@ body {
     position: relative;
   }
 
-/* From Uiverse.io by chris_6688 */ 
+/*Background*/
 .container {
     position: fixed;         /* fixa no fundo */
     top: 0;
@@ -118,7 +118,23 @@ body {
     opacity: 0.6;
   }
   
-  
+  /*plotCard*/
+  .card {
+    position:absolute;
+    top: 45vh;
+    left: 100vh;
+
+    max-width: 80vh; /* limite máximo para não crescer indefinidamente */
+    padding: 15px;
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+                -15px -15px 30px rgb(60, 60, 60);
+    display: inline-block; /* ajusta o tamanho conforme o conteúdo */
+    height: auto; /* importante: permite crescer verticalmente */
+    word-wrap: break-word; /* quebra palavras longas */
+}
+
 
   .divMovie{
     color: aliceblue;

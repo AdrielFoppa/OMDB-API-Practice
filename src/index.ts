@@ -57,17 +57,20 @@ function createMovieDiv(movie:MovieBool):void{
         title.classList.add("title")// adiciona a classe title para usar no css
         title.innerText = movie.title
 
+        let plotCard = document.createElement("div")
+        plotCard.classList.add("card")
         //Cria o elemento de plot do filme
         let plot = document.createElement("p")
         plot.classList.add("plot")//adiciona a classe plot para usar no css
         plot.innerText = movie.plot
+        plotCard.appendChild(plot)
 
         //Cria o elemento da nota do imdb do filme 
         let imdbRating = document.createElement("p")
         imdbRating.classList.add("imdbRating")//Adiiona a classe imdbRating para usar no css
         imdbRating.innerText = movie.imdbRating
 
-        div.append(title,poster,imdbRating,plot)
+        div.append(title,poster,imdbRating,plotCard)
 
         document.getElementById("data").appendChild(div)
     }
