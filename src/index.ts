@@ -58,7 +58,7 @@ function createMovieDiv(movie:MovieBool):void{
         title.innerText = movie.title
 
         let plotCard = document.createElement("div")
-        plotCard.classList.add("card")
+        plotCard.classList.add("cardPlot")
         //Cria o elemento de plot do filme
         let plot = document.createElement("p")
         plot.classList.add("plot")//adiciona a classe plot para usar no css

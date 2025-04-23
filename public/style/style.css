@@ -118,24 +118,27 @@ body {
     opacity: 0.6;
   }
   
-  /*plotCard*/
-  .card {
-    position:absolute;
-    top: 45vh;
-    left: 100vh;
-
-    max-width: 80vh; /* limite máximo para não crescer indefinidamente */
-    padding: 15px;
-    border-radius: 30px;
-    background: #212121;
-    box-shadow: 15px 15px 30px rgb(25, 25, 25),
-                -15px -15px 30px rgb(60, 60, 60);
-    display: inline-block; /* ajusta o tamanho conforme o conteúdo */
-    height: auto; /* importante: permite crescer verticalmente */
-    word-wrap: break-word; /* quebra palavras longas */
+/*plotCard*/
+.cardPlot {
+  position:absolute;
+  top: 45vh;
+  left: 100vh;
+  max-width: 80vh; /* limite máximo para não crescer indefinidamente */
+  padding: 15px;
+  border-radius: 30px;
+  background: #212121;
+  box-shadow: 15px 15px 30px rgb(25, 25, 25),
+              -15px -15px 30px rgb(60, 60, 60);
+  display: inline-block; /* ajusta o tamanho conforme o conteúdo */
+  height: auto; /* importante: permite crescer verticalmente */
+  word-wrap: break-word; /* quebra palavras longas */
 }
 
+.plot{
+    font-family: "DM sans", sans-serif;
+    font-size: 20px;
+}
 
-  .divMovie{
-    color: aliceblue;
-  }
+.divMovie{
+  color: aliceblue;
+}
