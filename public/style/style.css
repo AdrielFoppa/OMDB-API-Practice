@@ -121,7 +121,7 @@ body {
 /*card responsavel pelo plot*/
 .cardPlot {
   position:absolute;
-  top: 45vh;
+  top: 30vh;
   left: 50vw;
   max-width: 80vh; /* limite máximo para não crescer indefinidamente */
   padding: 15px;
@@ -155,8 +155,39 @@ body {
     word-wrap: break-word; /* quebra palavras longas */
   }
 
+  /*card responsavel pela nota imdb*/
+.cardImdbRating{
+    position: absolute;
+    top: 70vh;
+    left: 54vw;
+    transform: translateX(-50%);
+    max-width: 80vh;
+    padding: 15px;
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+                -15px -15px 30px rgb(60, 60, 60);
+    display: flex;                  
+    align-items: center;            
+    gap: 10px;                      
+    height: auto;
+    word-wrap: break-word;
+    color: white;
+}
+
+.imdbRating{
+    font-family: "DM sans", sans-serif;
+    font-size: 20px;
+}
+
+
+#ratingStar{
+    height: 16px;
+    width: 16px;
+}
+
 
 
 .divMovie{
-  color: aliceblue;
+  color: white;
 }

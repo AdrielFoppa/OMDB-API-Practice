@@ -64,12 +64,21 @@ function createMovieDiv(movie:MovieBool):void{
         plot.innerText = movie.plot
         plotCard.appendChild(plot)
 
+        //cria o card que o imdbrating vai ficar
+        let imdbRatingCard = document.createElement("div")
+        imdbRatingCard.classList.add("cardImdbRating")
         //Cria o elemento da nota do imdb do filme 
         let imdbRating = document.createElement("p")
-        imdbRating.classList.add("imdbRating")//Adiiona a classe imdbRating para usar no css
-        imdbRating.innerText = movie.imdbRating
+        imdbRating.classList.add("imdbRating")//Adiciona a classe imdbRating para usar no css
+        imdbRating.innerText = `${movie.imdbRating}/10`
+        //cria o elemento de imagem de estrela para a nota
+        let ratingStar = document.createElement("img")
+        ratingStar.src = "../public/images/estrela.png"
+        ratingStar.id = "ratingStar"
+        imdbRatingCard.append(ratingStar,imdbRating)
 
-        div.append(posterCard,imdbRating,plotCard)
+
+        div.append(posterCard,imdbRatingCard,plotCard)
 
         document.getElementById("data").appendChild(div)
     }
@@ -98,6 +107,7 @@ document.getElementById("botao").addEventListener("click",async (ev)=>{
     
     //se o filme existir 
     if(movieData){
+        //posiciona o pesquisador mais a cima na tela
         document.body.style.height = `20vh`
         restartSection()
         console.log(movieData)
