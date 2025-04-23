@@ -73,17 +73,13 @@ function createMovieDiv(movie:MovieBool):void{
 }
 
 
-//funcao responsavel para limoar a section 
+//funcao responsavel para limpar a section 
 function restartSection():void{
     //seleciona a section que contem os dados do filme
     const section = document.getElementById(`data`) as HTMLElement
     //limpa o html da section para que tire o filme da tela
     section.innerHTML = ``
 }
-
-
-
-
 
 
 //Funcao que sera chamado ao clicar no botao 

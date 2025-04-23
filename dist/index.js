@@ -53,7 +53,7 @@ function createMovieDiv(movie) {
         document.getElementById("data").appendChild(div);
     }
 }
-//funcao responsavel para limoar a section 
+//funcao responsavel para limpar a section 
 function restartSection() {
     //seleciona a section que contem os dados do filme
     const section = document.getElementById(`data`);
