@@ -73,13 +73,35 @@ function createMovieDiv(movie:MovieBool):void{
 }
 
 
+//funcao responsavel para limoar a section 
+function restartSection():void{
+    //seleciona a section que contem os dados do filme
+    const section = document.getElementById(`data`) as HTMLElement
+    //limpa o html da section para que tire o filme da tela
+    section.innerHTML = ``
+}
+
+
+
+
+
+
+//Funcao que sera chamado ao clicar no botao 
 document.getElementById("botao").addEventListener("click",async (ev)=>{
     ev.preventDefault()
 
-    const miranha:MovieBool = await movie("Spider Man 3")
-    if(miranha){
-        console.log(miranha)
-        createMovieDiv(miranha)
+    //pega o elemento de input do html 
+    const inputElement = document.getElementById("movieTitle") as HTMLInputElement
+    //pega o titulo do filme dado pelo usuario no input 
+    let movieTitle:string = inputElement.value
+    //Procura o filme na api 
+    const movieData:MovieBool = await movie(movieTitle)
+    
+    //se o filme existir 
+    if(movieData){
+        restartSection()
+        console.log(movieData)
+        createMovieDiv(movieData)
     }else{
         console.log('Filme nao encontrado')
     }   
