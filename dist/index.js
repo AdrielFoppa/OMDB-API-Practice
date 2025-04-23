@@ -34,17 +34,17 @@ function createMovieDiv(movie) {
         //cria a Div onde sera adicionado os dados do filme
         let div = document.createElement("div");
         div.classList.add("divMovie");
+        let posterCard = document.createElement("div");
+        posterCard.classList.add("cardPoster");
         //cria elemento de imagem do poster 
         let poster = document.createElement("img");
         poster.classList.add("poster"); //adiciona a classe poster para usar no css
         poster.src = movie.poster;
-        //Cria o elemento de titulo do filme 
-        let title = document.createElement("h2");
-        title.classList.add("title"); // adiciona a classe title para usar no css
-        title.innerText = movie.title;
+        posterCard.appendChild(poster);
+        //cria o card que o plot vai ficar
         let plotCard = document.createElement("div");
         plotCard.classList.add("cardPlot");
-        //Cria o elemento de plot do filme
+        //Cria o elemento de plot do filme que contem apenas escrita
         let plot = document.createElement("p");
         plot.classList.add("plot"); //adiciona a classe plot para usar no css
         plot.innerText = movie.plot;
@@ -53,7 +53,7 @@ function createMovieDiv(movie) {
         let imdbRating = document.createElement("p");
         imdbRating.classList.add("imdbRating"); //Adiiona a classe imdbRating para usar no css
         imdbRating.innerText = movie.imdbRating;
-        div.append(title, poster, imdbRating, plotCard);
+        div.append(posterCard, imdbRating, plotCard);
         document.getElementById("data").appendChild(div);
     }
 }

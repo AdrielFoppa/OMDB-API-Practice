@@ -118,11 +118,11 @@ body {
     opacity: 0.6;
   }
   
-/*plotCard*/
+/*card responsavel pelo plot*/
 .cardPlot {
   position:absolute;
   top: 45vh;
-  left: 100vh;
+  left: 50vw;
   max-width: 80vh; /* limite máximo para não crescer indefinidamente */
   padding: 15px;
   border-radius: 30px;
@@ -138,6 +138,24 @@ body {
     font-family: "DM sans", sans-serif;
     font-size: 20px;
 }
+
+/*card responsavel pelo poster do filme*/
+.cardPoster {
+    position:absolute;
+    top: 20vh;
+    left: 15vw;
+    max-width: 80vh; /* limite máximo para não crescer indefinidamente */
+    padding: 15px;
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+                -15px -15px 30px rgb(60, 60, 60);
+    display: inline-block; /* ajusta o tamanho conforme o conteúdo */
+    height: auto; /* importante: permite crescer verticalmente */
+    word-wrap: break-word; /* quebra palavras longas */
+  }
+
+
 
 .divMovie{
   color: aliceblue;
