@@ -45,6 +45,7 @@ function createMovieDiv(movie:MovieBool):void{
         
         //cria a Div onde sera adicionado os dados do filme
         let div = document.createElement("div")
+        div.classList.add("divMovie")
 
         //cria elemento de imagem do poster 
         let poster = document.createElement("img")
@@ -95,6 +96,7 @@ document.getElementById("botao").addEventListener("click",async (ev)=>{
     
     //se o filme existir 
     if(movieData){
+        document.body.style.height = `20vh`
         restartSection()
         console.log(movieData)
         createMovieDiv(movieData)

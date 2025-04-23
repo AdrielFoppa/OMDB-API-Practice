@@ -33,6 +33,7 @@ function createMovieDiv(movie) {
     if (typeof movie !== "boolean") {
         //cria a Div onde sera adicionado os dados do filme
         let div = document.createElement("div");
+        div.classList.add("divMovie");
         //cria elemento de imagem do poster 
         let poster = document.createElement("img");
         poster.classList.add("poster"); //adiciona a classe poster para usar no css
@@ -71,6 +72,7 @@ document.getElementById("botao").addEventListener("click", async (ev) => {
     const movieData = await movie(movieTitle);
     //se o filme existir 
     if (movieData) {
+        document.body.style.height = `20vh`;
         restartSection();
         console.log(movieData);
         createMovieDiv(movieData);
